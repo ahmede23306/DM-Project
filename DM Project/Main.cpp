@@ -79,7 +79,7 @@ void runAprioriExperiment(
     // 2. Visualize Support
     if (showChart) {
 
-        visualizeSupportBarChart(frequentItemsets);
+        visualizeSupportBarChart(frequentItemsets, minSup);
     }
 
     // 3, 4, 5. Generate Association Rules
