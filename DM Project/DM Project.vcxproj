@@ -123,7 +123,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Apriori.cpp" />
+    <ClCompile Include="AssociationRules.cpp" />
+    <ClCompile Include="DataReader.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Visualizer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Horizontal_Format.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Apriori.h" />
+    <ClInclude Include="AssociationRules.h" />
+    <ClInclude Include="DataReader.h" />
+    <ClInclude Include="Transaction.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Visualizer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
