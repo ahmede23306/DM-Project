@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <iomanip>
 #include <cmath>
@@ -12,6 +11,18 @@
 #include "Visualizer.h"
 
 using namespace std;
+
+// Print 3 lines of "=" between experiments
+void printSeparator() {
+
+    cout << "\n";
+
+    for (int i = 0; i < 3; ++i) {
+        cout << string(54, '=') << "\n";
+    }
+
+    cout << "\n";
+}
 
 // Run Apriori Experiment
 void runAprioriExperiment(
@@ -43,11 +54,7 @@ void runAprioriExperiment(
     }
 
     // Display L1, L2, ..., Lk
-    for (
-        size_t k = 0;
-        k < frequentItemsets.size();
-        ++k
-        ) {
+    for (size_t k = 0; k < frequentItemsets.size(); ++k) {
 
         cout << "\n--- Frequent Itemsets L"
             << (k + 1)
@@ -169,6 +176,7 @@ void runAprioriExperiment(
 int main() {
 
     string filename = "../Horizontal_Format.xlsx";
+
     cout << "Loading transactions from: "
         << filename << "...\n";
 
@@ -180,25 +188,17 @@ int main() {
         << " transactions.\n";
 
     // Experiment 1
-    runAprioriExperiment(
-        transactions,
-        0.40,
-        0.70,
-        true
-    );
+    runAprioriExperiment(transactions, 0.40, 0.70, true);
+    printSeparator();
 
     // Experiment 2
-    runAprioriExperiment(
-        transactions,
-        0.60,
-        0.80,
-        false
-    );
+    runAprioriExperiment(transactions, 0.60, 0.80, false);
+    printSeparator();
 
     // Custom Experiment
     double userSup, userConf;
 
-    cout << "\nEnter custom Min Support (e.g. 0.5 for 50%): ";
+    cout << "Enter custom Min Support (e.g. 0.5 for 50%): ";
 
     if (cin >> userSup) {
 
@@ -206,12 +206,8 @@ int main() {
 
         if (cin >> userConf) {
 
-            runAprioriExperiment(
-                transactions,
-                userSup,
-                userConf,
-                true
-            );
+            runAprioriExperiment(transactions, userSup, userConf, true);
+            printSeparator();
         }
     }
 
