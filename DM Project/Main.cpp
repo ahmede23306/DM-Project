@@ -172,6 +172,25 @@ void runAprioriExperiment(
     }
 }
 
+// Read a value in (0, 1] from the user, returns false on input failure
+bool askValue(const string& prompt, double& value) {
+
+    while (true) {
+
+        cout << prompt;
+
+        if (!(cin >> value)) {
+            return false;
+        }
+
+        if (value > 0.0 && value <= 1.0) {
+            return true;
+        }
+
+        cout << "Invalid value. Enter a number between 0 and 1.\n";
+    }
+}
+
 // Main Function
 int main() {
 
@@ -185,30 +204,38 @@ int main() {
 
     cout << "Successfully loaded "
         << transactions.size()
-        << " transactions.\n";
+        << " transactions.\n\n";
 
-    // Experiment 1
-    runAprioriExperiment(transactions, 0.40, 0.70, true);
-    printSeparator();
+    char again = 'y';
 
-    // Experiment 2
-    runAprioriExperiment(transactions, 0.60, 0.80, false);
-    printSeparator();
+    while (again == 'y' || again == 'Y') {
 
-    // Custom Experiment
-    double userSup, userConf;
+        double minSup, minConf;
 
-    cout << "Enter custom Min Support (e.g. 0.5 for 50%): ";
-
-    if (cin >> userSup) {
-
-        cout << "Enter custom Min Confidence (e.g. 0.75 for 75%): ";
-
-        if (cin >> userConf) {
-
-            runAprioriExperiment(transactions, userSup, userConf, true);
-            printSeparator();
+        if (!askValue("Enter Min Support (e.g. 0.5 for 50%): ", minSup)) {
+            break;
         }
+
+        if (!askValue("Enter Min Confidence (e.g. 0.75 for 75%): ", minConf)) {
+            break;
+        }
+
+        runAprioriExperiment(
+            transactions,
+            minSup,
+            minConf,
+            true
+        );
+
+        printSeparator();
+
+        cout << "Run another trial? (y/n): ";
+
+        if (!(cin >> again)) {
+            break;
+        }
+
+        cout << "\n";
     }
 
     return 0;
