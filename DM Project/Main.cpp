@@ -194,7 +194,7 @@ bool askValue(const string& prompt, double& value) {
 // Main Function
 int main() {
 
-    string filename = "../Horizontal_Format.xlsx";
+    string filename = "../Bank_Horizontal_Format.csv";
 
     cout << "Loading transactions from: "
         << filename << "...\n";

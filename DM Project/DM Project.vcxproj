@@ -131,15 +131,15 @@
     <ClCompile Include="Visualizer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Horizontal_Format.xlsx" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Apriori.h" />
     <ClInclude Include="AssociationRules.h" />
     <ClInclude Include="DataReader.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Visualizer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Bank_Horizontal_Format.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
