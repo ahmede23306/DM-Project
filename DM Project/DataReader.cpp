@@ -35,18 +35,20 @@ Transactions loadTransactions(const string& filename) {
         csvFile = "temp_data.csv";
 
         string cmd =
-            "python -c \"import pandas as pd; "
-            "pd.read_excel('" + filename +
-            "').to_csv('" + csvFile +
-            "', index=False)\" 2>nul";
+            "py -3 -c \"import pandas as pd; "
+            "pd.read_excel(r'" + filename +
+            "').to_csv(r'" + csvFile +
+            "', index=False)\"";
+
+        cout << "Executing: " << cmd << endl;
 
         int status = system(cmd.c_str());
 
-        if (status != 0) {
-            cout << "[Warning]: Please save the Excel file "
-                << "as CSV and pass its name to the program.\n";
+        cout << "Python exit status: " << status << endl;
 
-            exit(1);
+        if (status != 0) {
+            cout << "Excel conversion failed!\n";
+            return transactions;
         }
     }
 

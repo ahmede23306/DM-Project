@@ -168,8 +168,7 @@ void runAprioriExperiment(
 // Main Function
 int main() {
 
-    string filename = "data/Horizontal_Format.xlsx";
-
+    string filename = "../Horizontal_Format.xlsx";
     cout << "Loading transactions from: "
         << filename << "...\n";
 
