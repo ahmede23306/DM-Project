@@ -196,15 +196,15 @@ int main() {
 
     string filename = "../Bank_Horizontal_Format.csv";
 
-    cout << "Loading transactions from: "
-        << filename << "...\n";
+    cout << "Loading transactions from: "<< filename << "...\n";
 
-    Transactions transactions =
-        loadTransactions(filename);
 
-    cout << "Successfully loaded "
-        << transactions.size()
-        << " transactions.\n\n";
+    Transactions transactions = loadTransactions(filename);
+
+
+    cout << "Successfully loaded " << transactions.size() << " transactions.\n\n";
+
+
 
     char again = 'y';
 
