@@ -10,7 +10,6 @@
 
 using namespace std;
 
-// Escape characters that are special in HTML/SVG
 static string escapeXml(const string& s) {
 
     string out;

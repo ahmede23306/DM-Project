@@ -123,23 +123,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Apriori.cpp" />
-    <ClCompile Include="AssociationRules.cpp" />
-    <ClCompile Include="DataReader.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Utils.cpp" />
-    <ClCompile Include="Visualizer.cpp" />
+    <ClInclude Include="..\..\DM-Project-finished\apriori.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Apriori.h" />
-    <ClInclude Include="AssociationRules.h" />
-    <ClInclude Include="DataReader.h" />
-    <ClInclude Include="Transaction.h" />
-    <ClInclude Include="Utils.h" />
-    <ClInclude Include="Visualizer.h" />
+    <ClCompile Include="..\..\DM-Project-finished\apriori.cpp" />
+    <ClCompile Include="..\..\DM-Project-finished\data.cpp" />
+    <ClCompile Include="..\..\DM-Project-finished\main.cpp" />
+    <ClCompile Include="..\..\DM-Project-finished\rules.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Bank_Horizontal_Format.csv" />
+    <None Include="..\..\DM-Project-finished\Horizontal_Format.xlsx" />
+    <None Include="..\..\DM-Project-finished\visualize.py" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

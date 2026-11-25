@@ -1,14 +1,47 @@
+#ifndef APRIORI_H
+#define APRIORI_H
 
-#pragma once
+#include <set>
+#include <vector>
+#include <map>
+#include <string>
 
-#include "Transaction.h"
+// shared data types
+typedef std::set<char> itemset;
+typedef std::vector<itemset> transactions;
+typedef std::vector<std::map<itemset, int>> frequentLvl;
 
-int getSupportCount(
-    const Itemset& candidate,
-    const Transactions& transactions
+struct rule {
+    itemset x;
+    itemset y;
+    int supp;
+    double conf;
+    double lift;
+};
+
+// load data
+transactions readFile(const std::string& file);
+
+// apriori algo functions
+int supportCount(const itemset& candidate, const transactions& tr);
+
+std::map<itemset, int> generateL1(
+    const transactions& trans, int minSup
 );
 
-FrequentLevels generateFrequentItemsets(
-    const Transactions& transactions,
-    double minSupport
+std::set<itemset> generateCandidates(
+    const std::map<itemset, int>& prev
 );
+
+frequentLvl generateFreq(
+    const transactions& tr, int minSup
+);
+
+// generate rules
+std::vector<itemset> subsets(const itemset& itm);
+
+std::vector<std::vector<rule>> generateRules(
+    const frequentLvl& lvl, int n, double minConf
+);
+
+#endif

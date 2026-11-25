@@ -18,48 +18,30 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Utils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DataReader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Apriori.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AssociationRules.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Visualizer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Transaction.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DataReader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Apriori.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AssociationRules.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Visualizer.h">
+    <ClInclude Include="..\..\DM-Project-finished\apriori.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Bank_Horizontal_Format.csv">
-      <Filter>Data</Filter>
+    <ClCompile Include="..\..\DM-Project-finished\apriori.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DM-Project-finished\data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DM-Project-finished\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\DM-Project-finished\rules.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\DM-Project-finished\visualize.py">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\DM-Project-finished\Horizontal_Format.xlsx">
+      <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
 </Project>
